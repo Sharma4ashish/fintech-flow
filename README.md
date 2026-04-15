@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Finance Flow
 
-## Getting Started
+A modern web application for searching and visualizing company financial data from the SEC EDGAR database.
 
-First, run the development server:
+## Features
 
+- **Company Search**: Search for publicly traded companies by name or ticker
+- **Financial Data Visualization**: View key financial metrics and trends in interactive charts
+- **Real-time Data**: Fetches live financial data from the SEC EDGAR API
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+
+## Tech Stack
+
+### Frontend
+- **Next.js 16.2.3** - React framework with App Router for server/client components
+- **React 19** - UI library with latest hooks and features
+- **TypeScript** - Type-safe development
+- **Tailwind CSS 4.2** - Utility-first CSS framework for styling
+- **Recharts 3.8** - Composable charting library for financial data visualization
+- **React Hot Toast 2.6** - Toast notifications for user feedback
+
+### Development Tools
+- **ESLint 9** - Code quality and style enforcement
+- **PostCSS 8.5** - CSS processing pipeline
+
+## Setup
+
+### Prerequisites
+- Node.js 18+ and npm/yarn/pnpm installed
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd fintec-flow
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Learn More
+### Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint to check code quality
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── components/          # Reusable UI components
+│   ├── Card.tsx        # Data card display component
+│   ├── Chart.tsx       # Financial chart visualization
+│   └── SearchBar.tsx   # Company search component
+├── context/            # React context for state management
+│   └── AppContext.tsx  # Global app state
+└── services/           # API and data utilities
+    ├── api.ts          # SEC EDGAR API integration
+    └── cleanFinTecData.ts  # Data transformation utilities
 
-## Deploy on Vercel
+app/
+├── api/                # Next.js API routes
+│   └── company/route.ts    # Company data endpoint
+├── layout.tsx          # Root layout component
+└── page.tsx            # Home page
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Known Limitations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **API Rate Limits**: The SEC EDGAR API has rate limiting. Frequent requests may result in temporary throttling.
+2. **Data Availability**: Not all companies have complete historical financial data in the SEC EDGAR database.
+3. **Real-time Updates**: Financial data is updated periodically by the SEC and may not reflect intraday changes or real-time market data.
+4. **Search Functionality**: Company search is limited to companies with SEC filings (public companies in the US).
+5. **Performance**: Loading large datasets with extended historical periods may experience slower performance on lower-end devices.
+6. **Browser Support**: The application is optimized for modern browsers; older browsers may have limited functionality.
+
+## Future Enhancements
+
+- Add more financial metrics and analysis tools
+- Implement data export (CSV, PDF)
+- Add historical comparison between companies
+- Cache frequently accessed data for better performance
+
+## License
+
+This project is part of an assignment.
