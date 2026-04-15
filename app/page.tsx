@@ -8,12 +8,7 @@ import { useAppContext } from "@/src/context/AppContext";
 
 export default function Home() {
 
-
   const { setFintecData, error, loading, fintecData } = useAppContext();
-
-  console.log("Hi response", fintecData);
-
-
 
   return (
     <div className="min-h-screen bg-gray-100 p-4 sm:p-6">

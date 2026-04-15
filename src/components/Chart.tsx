@@ -12,7 +12,7 @@ import {
 
 export default function RevenueChart({ data }:any) {
   if (!data || data.length === 0) {
-    return <p className="text-sm text-gray-500">No chart data available</p>;
+    return null;;
   }
 
   return (
@@ -26,10 +26,10 @@ export default function RevenueChart({ data }:any) {
           <LineChart data={data}>
             <XAxis
               dataKey="date"
-              tick={{ fontSize: 12 }}
+              tick={{ fontSize: 12   }}
             />
             <YAxis
-              tick={{ fontSize: 12 }}
+              tick={{ fontSize: 8 }}
             />
             <Tooltip />
             <Line
