@@ -37,7 +37,7 @@ export default function Home() {
           </p>
         )}
 
-        {fintecData && <h1>Company Name - {fintecData?.companyName}</h1>}
+            <h1>Company Name - {fintecData ? fintecData?.companyName : "Search Company To Get the Data"}</h1>
 
         
 

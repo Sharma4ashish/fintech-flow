@@ -22,13 +22,11 @@ export const cleanFinTecData = (data: any) => {
         }, {})
       );
 
-      // sort by date
       const sorted = unique.sort(
         (a: any, b: any) =>
           new Date(a.end).getTime() - new Date(b.end).getTime()
       );
 
-      // format for UI
       return sorted.map((item: any) => ({
         date: item.end,
         value: item.val,
