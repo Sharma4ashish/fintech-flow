@@ -1,0 +1,24 @@
+export const cleanFinTecData = (data: any) => {
+  try {
+
+    console.log(data);
+    
+    const facts = data?.facts?.["us-gaap"];
+    const companyName = data?.entityName;
+    const revenue = data?.facts?.["us-gaap"]?.ContractWithCustomerLiabilityRevenueRecognized?.units?.USD
+
+
+
+
+
+
+    return {
+      facts,
+      companyName,
+      revenue
+    }
+  } catch (err) {
+    console.error(err);
+    return null;
+  }
+};
