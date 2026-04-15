@@ -6,6 +6,8 @@ export const cleanFinTecData = (data: any) => {
     const facts = data?.facts?.["us-gaap"];
     const companyName = data?.entityName;
     const revenue = data?.facts?.["us-gaap"]?.ContractWithCustomerLiabilityRevenueRecognized?.units?.USD
+    const assets = data?.facts?.["us-gaap"]?.Assets?.units?.USD
+    const liabilities = data?.facts?.["us-gaap"]?.Liabilities?.units?.USD
 
 
 
@@ -15,7 +17,9 @@ export const cleanFinTecData = (data: any) => {
     return {
       facts,
       companyName,
-      revenue
+      revenue,
+      liabilities,
+      assets  
     }
   } catch (err) {
     console.error(err);
