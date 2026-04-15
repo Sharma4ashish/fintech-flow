@@ -9,11 +9,6 @@ export const cleanFinTecData = (data: any) => {
     const assets = data?.facts?.["us-gaap"]?.Assets?.units?.USD
     const liabilities = data?.facts?.["us-gaap"]?.Liabilities?.units?.USD
 
-
-
-
-
-
     return {
       facts,
       companyName,

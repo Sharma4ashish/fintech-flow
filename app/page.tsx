@@ -12,6 +12,11 @@ export default function Home() {
   const { setFintecData ,error,loading, fintecData} = useAppContext();
 
   console.log("Hi response",fintecData);
+
+  const getLatest = (arr: any[]) => {
+    if (!arr || arr.length === 0) return "N/A";
+    return `$${arr[arr.length - 1].value}`;
+  };
   
 
   return (
@@ -44,6 +49,11 @@ export default function Home() {
             <Card title="hiii " value="Valueee">
               
             </Card>
+
+            <Card
+              title="Revenue"
+              value={getLatest(fintecData.revenue)}
+            />
 
           </div>
         )}
