@@ -38,6 +38,8 @@ export const cleanFinTecData = (data: any) => {
     const latest = (arr: any[]) =>
       arr.length ? arr[arr.length - 1] : null;
 
+    //get the last value from the array to show in cards
+
 
     const revenue = cleanMetric(
       facts?.ContractWithCustomerLiabilityRevenueRecognized

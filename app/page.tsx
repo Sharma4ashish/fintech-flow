@@ -1,7 +1,7 @@
 "use client";
 
 import Card from "@/src/components/Card";
-import RevenueChart from "@/src/components/RevenueChart";
+import RevenueChart from "@/src/components/Chart";
 import SearchBar from "@/src/components/SearchBar";
 import { useAppContext } from "@/src/context/AppContext";
 
@@ -13,10 +13,6 @@ export default function Home() {
 
   console.log("Hi response", fintecData);
 
-  const getLatest = (arr: any[]) => {
-    if (!arr || arr.length === 0) return "N/A";
-    return `$${arr[arr.length - 1].value}`;
-  };
 
 
   return (
