@@ -1,25 +1,21 @@
 "use client";
 
+import SearchBar from "@/src/components/SearchBar";
+import { useAppContext } from "@/src/context/AppContext";
 import { cleanFinTecData } from "@/src/services/cleanFinTecData";
 import { useEffect } from "react";
 
 export default function Home() {
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("/api/company?cik=0000320193");
-      const data = await res.json();
 
-      console.log(data.entityName);
 
-      const cleanData = cleanFinTecData(data)
+  const { setFintecData , fintecData} = useAppContext();
 
-      console.log(cleanData);
-
-    };
-
-    fetchData();
-  }, []);
+  console.log("Hi response",fintecData);
+  
 
   return <div>checking api
+    <SearchBar/>
+
+        
   </div>;
 }

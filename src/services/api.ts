@@ -3,7 +3,7 @@
 export const fetchCompanyData = async (cik: string) => {
   try {
     const res = await fetch(
-      `https://data.sec.gov/api/xbrl/companyfacts/${cik}.json`,{
+      `/api/company?cik=${cik}`,{
         headers: {
             "User-Agent": "FinancialDataApp (test@example.com)",
         },
